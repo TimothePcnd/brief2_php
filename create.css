@@ -1,0 +1,80 @@
+/* Style moderne pour le formulaire de produits */
+form {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #009879;
+    box-shadow: 0 0 8px rgba(0, 152, 121, 0.3);
+    outline: none;
+}
+
+button {
+    background-color: #009879;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #007c64;
+}
+
+/* Style pour les messages d'erreur */
+input:invalid {
+    border-color: #ff6b6b;
+}
+
+/* Style responsive */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 10px;
+    }
+}
+
+h2 {
+    text-align: center;
+}
