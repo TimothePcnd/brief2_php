@@ -1,80 +1,197 @@
-/* Style moderne pour le formulaire de produits */
-form {
-    max-width: 500px;
-    margin: 30px auto;
-    padding: 25px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+/* CSS ultra stylé pour le formulaire de modification */
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #333;
-}
-
-input[type="text"],
-input[type="number"] {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+/* Styles globaux et typographie */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-size: 16px;
-    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-input[type="text"]:focus,
-input[type="number"]:focus {
-    border-color: #009879;
-    box-shadow: 0 0 8px rgba(0, 152, 121, 0.3);
-    outline: none;
+body {
+    background: linear-gradient(135deg, #070b34 0%, #1a1b4b 100%);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    padding: 30px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-button {
-    background-color: #009879;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
+/* Conteneur du formulaire avec effet glassmorphism */
+form {
     width: 100%;
-    transition: background-color 0.3s;
+    max-width: 500px;
+    background: rgba(16, 18, 58, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 0 30px rgba(0, 207, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
 }
 
-button:hover {
-    background-color: #007c64;
+/* Effet néon autour du formulaire */
+form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00cfff, #ff00e6);
+    z-index: 1;
 }
 
-/* Style pour les messages d'erreur */
-input:invalid {
-    border-color: #ff6b6b;
-}
-
-/* Style responsive */
-@media (max-width: 600px) {
-    form {
-        padding: 15px;
-        margin: 15px auto;
-    }
-
-    input[type="text"],
-    input[type="number"] {
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    button {
-        padding: 10px;
-    }
-}
-
+/* Titre du formulaire */
 h2 {
     text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: transparent;
+    background: linear-gradient(45deg, #00cfff, #ff00e6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 0 0 10px rgba(0, 207, 255, 0.3);
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 80px;
+    background: linear-gradient(90deg, #00cfff, #ff00e6);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Style des labels */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #00eaff;
+}
+
+/* Style des champs de saisie */
+input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 25px;
+    background: rgba(26, 27, 75, 0.7);
+    border: 1px solid rgba(0, 234, 255, 0.3);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(0, 207, 255, 0.4);
+    border-color: #00eaff;
+    background: rgba(39, 40, 107, 0.9);
+}
+
+/* Style pour les champs numériques */
+input[type="number"] {
+    appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Bouton de validation */
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #00eaff, #2600ff);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 5px 25px rgba(0, 234, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 35px rgba(0, 234, 255, 0.7);
+}
+
+button[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: 0.5s;
+}
+
+button[type="submit"]:hover::before {
+    left: 100%;
+}
+
+/* Animation pour les champs */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 207, 255, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 207, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 207, 255, 0);
+    }
+}
+
+input:focus {
+    animation: pulse 1.5s infinite;
+}
+
+/* Style pour les messages d'erreur (optionnel) */
+input:invalid {
+    border-color: rgba(255, 0, 98, 0.5);
+}
+
+/* Media queries */
+@media (max-width: 600px) {
+    form {
+        padding: 25px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    input {
+        padding: 12px;
+    }
+
+    button[type="submit"] {
+        padding: 12px;
+        font-size: 16px;
+    }
 }
